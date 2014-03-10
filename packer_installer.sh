@@ -42,19 +42,18 @@
 ######################################################################
 # Functions
 ######################################################################
-function usage {
+usage () {
     local LINES=1
     grep -E -A $LINES "^## Usage:" "$0" | sed 's/^## //'
     exit 2
 }
 
-function help {
+help () {
     sed -n '/^##\([^#]\|$\)/ {s/##//; s/^ //; p}' "$0"
     exit 2
 }
 
-options_parse () {
-    unset ACTION SHIFT
+parse_options () {
     while getopts ":hu" opt; do
         case $opt in
             h) help ;;
@@ -68,7 +67,7 @@ options_parse () {
 # Main
 ######################################################################
 set -e
-options_parse "$@"
+parse_options "$@"
 
 case `arch` in
     x86_64) 
