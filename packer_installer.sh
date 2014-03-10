@@ -101,13 +101,13 @@ fi
 
 echo "Extracting Packer $PACKER_VERSION ..."
     : "${TMPDIR:=$PACKER_TEMPDIR}"
-    dir="${HOME}/stow/packer_${PACKER_VERSION}/bin"
+    dir="${PACKER_STOWDIR}/packer_${PACKER_VERSION}/bin"
     mkdir -p "$dir"
     unzip -B -q -d "$dir" "$zipfile"
 echo "Extraction complete."
 
 echo "Stowing Packer $PACKER_VERSION ..."
-    find ~/stow -type d -name packer_\* -exec basename {} \; |
-	xargs -n1 stow -d ~/stow -t ~ -D
-    stow -d ~/stow -t ~ --ignore='~\d+\z' "packer_${PACKER_VERSION}"
+    find "$PACKER_STOWDIR" -type d -name packer_\* -exec basename {} \; |
+	xargs -n1 stow -d "$PACKER_STOWDIR" -t ~ -D
+    stow -d "$PACKER_STOWDIR" -t ~ --ignore='~\d+\z' "packer_${PACKER_VERSION}"
 echo "Stowing complete."
