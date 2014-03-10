@@ -45,7 +45,7 @@ Download, verify, and stow Packer (see <http://packer.io>).
 [HOME]: https://github.com/CodeGnome/packer_installer.sh
 [AUTHORS]: https://raw.github.com/CodeGnome/packer_installer.sh/master/LICENSE
 [LICENSE]: https://raw.github.com/CodeGnome/packer_installer.sh/master/LICENSE
-[README]: https://raw.github.com/CodeGnome/packer_installer.sh/master/README
+[README]: https://raw.github.com/CodeGnome/packer_installer.sh/master/README.md
 
 [cc_license]: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
 [cc_logo]: http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png
